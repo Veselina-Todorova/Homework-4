@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+        let message = `Мазе бот v1 на Вашите услуги`;
+        alert(message);
+
+        let firstName    = prompt (`Моля въведете вашето име`);
+        let secondName   = prompt (`Моля въведете вашата фамилия`);
+        let age          = prompt (`Моля въведете вашата възраст`);
+        let sex          = prompt (`Моля въведете вашия пол - Мъж или Жена`);
+        let isSexCorrect = (sex == "Мъж") || (sex == "Жена");    
+        let uniNumber    = 202201;
+
+       // console.log(firstName);
+       //  console.log(secondName);
+       //  console.log(age);
+       //  console.log(sex);
+       //  console.log(isSexCorrect);
+
+       
+         
+        
+        let personManAdult   = (age > 17) && (sex == "Мъж");
+        let personWomanAdult = (age > 17) && (sex == "Жена");        
+        let personManKid     = (age < 18) && (sex == "Мъж");
+        let personWomanKid   = (age < 18) && (sex == "Жена");       
+        let personAdult      =  age >= 18 ; 
+                
+
+        if(personManAdult) {
+            console.log(`Здравейте г-н ${secondName}`);
+        }
+        else if (personWomanAdult){
+            console.log(`Здравейте г-жо ${secondName}`);
+        }
+        else if(personManKid){
+            console.log("Здрасти малкия, не пускаме дечица тука - бягай за бира");
+        }
+        else if (personWomanKid){
+            console.log("Здрасти малката, не пускаме дечица тука - отивай да си играеш");
+        }
+
+        alert(`Добре дошъл в мазето на баба ${firstName} ${secondName}`);
+        alert(`Ти се идентифицира с номер ${uniNumber}`);
+        alert(`Ти си на ${age} години;`)
+
+        let appleWine    = "Ябълково вино";
+        let smokedMeat   = "Пушено месо";
+        let plumJam      = "Сливов мармалад";
+        let marinPeppers = "Мариновани чушки";
+        let piggyBank    = "Прасенце касичка";
+
+        let amountAppleWine    = 10;
+        let amountSmokedMeat   = 5;
+        let amountPlumJam      = 9;
+        let amountMarinPeppers = 4;
+        let amountPiggyBank    = 184.35;
+
+        let serNumberAppleWine = `C7544_${amountAppleWine}`;
+        let serNumberSmokedMeat = `M7441_${amountSmokedMeat}`;
+        let serNumberPlumJam = `S6491_${amountPlumJam}`;
+        let serNumberMarinPeppers = `P7485_${amountMarinPeppers}`;
+        let serNumberPiggyBank = `B6584_${amountPiggyBank}`;
+
+        alert("Отчет за продуктите в мазето");
+        
+        let tbAppWine    = {Продукт:`${appleWine}` , Брой:`${amountAppleWine}`, Нов:`${serNumberAppleWine}` };
+        let tbSmMeat     = {Продукт:`${smokedMeat}` , Брой:`${amountSmokedMeat}`, Нов :`${serNumberSmokedMeat}`};
+        let tbPlumJam    = {Продукт:`${plumJam}` , Брой:`${amountPlumJam}`, Нов:`${serNumberPlumJam}`};
+        let tbMarPeppers = {Продукт:`${marinPeppers}` , Брой:`${amountMarinPeppers}`, Нов:`${serNumberMarinPeppers}`};
+        let tbPigbank    = {Продукт:`${piggyBank}` , Брой:`${amountPiggyBank}`, Нов:`${serNumberPiggyBank}`};
+
+        console.table([tbAppWine,tbSmMeat,tbPlumJam,tbMarPeppers,tbPigbank]);
+
+        let doYouWantDonate = "Желаете ли да дарите пари за закупуване на нови продукти? - Да/Не";   
+        let isDoYouWantDonateYes = doYouWantDonate == "Да";
+        let isDoYouWantDonateNo  = doYouWantDonate == "Не";   
+        let donateAmount = "Въведете сумата която желаете да дарите";
+       
+        
+              
+        if(personAdult){
+            prompt(doYouWantDonate);
+        }
+        if(personAdult && isDoYouWantDonateNo){
+            alert ("Засрамете се!");
+        }
+        if(personAdult && isDoYouWantDonateYes){
+            let donationAmount = prompt(donateAmount);
+            let donationAmount20 = `$(donationAmount * 1.2)лв.`;
+            alert(`Сумата, която искате да дарите с начилено ДДС е: ${donationAmount20} `);
+        } 
+        
+
+
+
+    </script>
+
+</body>
+</html>
+
